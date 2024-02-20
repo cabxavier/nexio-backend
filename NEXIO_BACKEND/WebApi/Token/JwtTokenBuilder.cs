@@ -96,6 +96,5 @@ namespace WebApi.Token
             return new JwtToken(token);
 
         }
-
     }
 }

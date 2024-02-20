@@ -26,9 +26,9 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "NEXIOS TECNOLOGIA API",
-        Description = "Developed by Nexios Tecnologia",
-        Contact = new OpenApiContact { Name = "Nexios Tecnologia", Email = "nexiostecnologia@gmail.com" },
+        Title = "NEXIO TECNOLOGIA API",
+        Description = "Developed by Nexio Tecnologia",
+        Contact = new OpenApiContact { Name = "Nexio Tecnologia", Email = "nexiotecnologia@gmail.com" },
         License = new OpenApiLicense { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") }
     });
 
@@ -88,8 +88,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                      ValidateLifetime = true,
                      ValidateIssuerSigningKey = true,
 
-                     ValidIssuer = "Nexios.Securiry.Bearer",
-                     ValidAudience = "Nexios.Securiry.Bearer",
+                     ValidIssuer = "Nexio.Securiry.Bearer",
+                     ValidAudience = "Nexio.Securiry.Bearer",
                      IssuerSigningKey = JwtSecurityKey.Create("S3cr3t@K3y-971$5247")
                  };
 

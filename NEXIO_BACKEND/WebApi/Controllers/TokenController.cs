@@ -39,10 +39,10 @@ namespace WebApi.Controllers
             {
                 var token = new JwtTokenBuilder()
                     .AddSecurityKey(JwtSecurityKey.Create("S3cr3t@K3y-971$5247"))
-                    .AddSubject("Nexios Tecnologia")
-                    .AddIssuer("Nexios.Securiry.Bearer")
-                    .AddAudience("Nexios.Securiry.Bearer")
-                    .AddClaim("NexiosAPI", "1")
+                    .AddSubject("Nexio Tecnologia")
+                    .AddIssuer("Nexio.Securiry.Bearer")
+                    .AddAudience("Nexio.Securiry.Bearer")
+                    .AddClaim("NexioAPI", "1")
                     .AddExpiry(20)
                     .Builder();
 
