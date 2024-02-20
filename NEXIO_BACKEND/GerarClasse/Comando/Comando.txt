@@ -1,0 +1,2 @@
+dotnet ef dbcontext scaffold "Server=NOTEMICROSERV;Database=Nexios;User Id=sa;Password=sql@2017;Encrypt=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Entities 
+-n aonde n é o namespace -t t seria o nome da tabela que gostariamos de mapear se quisermos mais de uma tabela separamos por virgula -s seria o schema
