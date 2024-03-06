@@ -58,6 +58,9 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+builder.Services.AddRin();
+builder.Logging.AddRinLogger();
+
 
 builder.Services.AddDbContext<ContextBase>(options =>
                options.UseSqlServer(
@@ -130,9 +133,12 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 //{
-    
-    app.UseSwagger();
-    app.UseSwaggerUI();
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
+app.UseRin();
+app.UseRinDiagnosticsHandler();
 //}
 
 app.UseHttpsRedirection();
