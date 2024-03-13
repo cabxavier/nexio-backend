@@ -31,6 +31,39 @@ namespace WebApi.Controllers
         [Produces("application/json")]
         public async Task<object> Insert(Pessoa Pessoa)
         {
+            Pessoa.DataAlteracao = DateTime.Now;
+            Pessoa.UsuarioAlteracao = "adm";
+
+            if (Pessoa.IdUsuario == 0)
+            {
+                Pessoa.IdUsuario = null;
+            }
+
+            if (string.IsNullOrWhiteSpace(Pessoa.CodigoInterno))
+            {
+                Pessoa.CodigoInterno = null;
+            }
+
+            if (string.IsNullOrEmpty(Pessoa.Cnpj))
+            {
+                Pessoa.Cnpj = null;
+            }
+
+            if (string.IsNullOrEmpty(Pessoa.Cpf))
+            {
+                Pessoa.Cpf = null;
+            }
+
+            if (string.IsNullOrEmpty(Pessoa.EmailPrincipal))
+            {
+                Pessoa.EmailPrincipal = null;
+            }
+
+            if (string.IsNullOrEmpty(Pessoa.EmailSecundario))
+            {
+                Pessoa.EmailSecundario = null;
+            }
+
             await this.IPessoaService.Insert(Pessoa);
 
             return Task.FromResult(Pessoa);
@@ -40,6 +73,39 @@ namespace WebApi.Controllers
         [Produces("application/json")]
         public async Task<object> Update(Pessoa Pessoa)
         {
+            Pessoa.DataAlteracao = DateTime.Now;
+            Pessoa.UsuarioAlteracao = "adm";
+
+            if (Pessoa.IdUsuario == 0)
+            {
+                Pessoa.IdUsuario = null;
+            }
+
+            if (string.IsNullOrWhiteSpace(Pessoa.CodigoInterno))
+            {
+                Pessoa.CodigoInterno = null;
+            }
+
+            if (string.IsNullOrEmpty(Pessoa.Cnpj))
+            {
+                Pessoa.Cnpj = null;
+            }
+
+            if (string.IsNullOrEmpty(Pessoa.Cpf))
+            {
+                Pessoa.Cpf = null;
+            }
+
+            if (string.IsNullOrEmpty(Pessoa.EmailPrincipal))
+            {
+                Pessoa.EmailPrincipal = null;
+            }
+
+            if (string.IsNullOrEmpty(Pessoa.EmailSecundario))
+            {
+                Pessoa.EmailSecundario = null;
+            }
+
             await this.IPessoaService.Update(Pessoa);
 
             return Task.FromResult(Pessoa);

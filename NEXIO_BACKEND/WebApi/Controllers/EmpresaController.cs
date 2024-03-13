@@ -31,6 +31,19 @@ namespace WebApi.Controllers
         [Produces("application/json")]
         public async Task<object> Insert(Empresa Empresa)
         {
+            Empresa.DataAlteracao = DateTime.Now;
+            Empresa.UsuarioAlteracao = "adm";
+
+            if(string.IsNullOrWhiteSpace(Empresa.InscricaoMunicipal))
+            {
+                Empresa.InscricaoMunicipal = null;
+            }
+
+            if (string.IsNullOrWhiteSpace(Empresa.InscricaoEstadual))
+            {
+                Empresa.InscricaoEstadual = null;
+            }
+
             await this.IEmpresaService.Insert(Empresa);
 
             return Task.FromResult(Empresa);
@@ -40,6 +53,19 @@ namespace WebApi.Controllers
         [Produces("application/json")]
         public async Task<object> Update(Empresa Empresa)
         {
+            Empresa.DataAlteracao = DateTime.Now;
+            Empresa.UsuarioAlteracao = "adm";
+
+            if (string.IsNullOrWhiteSpace(Empresa.InscricaoMunicipal))
+            {
+                Empresa.InscricaoMunicipal = null;
+            }
+
+            if (string.IsNullOrWhiteSpace(Empresa.InscricaoEstadual))
+            {
+                Empresa.InscricaoEstadual = null;
+            }
+
             await this.IEmpresaService.Update(Empresa);
 
             return Task.FromResult(Empresa);

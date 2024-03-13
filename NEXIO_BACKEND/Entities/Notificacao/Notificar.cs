@@ -9,15 +9,15 @@ namespace Entities.Notificacao
 
         [JsonIgnore]
         [NotMapped]
-        public string NomePropriedade { get; set; }
+        public string? NomePropriedade { get; set; }
 
         [JsonIgnore]
         [NotMapped]
-        public string Mensagem { get; set; }
+        public string? Mensagem { get; set; }
 
         [JsonIgnore]
         [NotMapped]
-        public List<Notificar> ListNotificar { get; set; }
+        public List<Notificar>? ListNotificar { get; set; }
 
         public bool ValidarPropriedadeString(string valor, string NomePropriedade)
         {

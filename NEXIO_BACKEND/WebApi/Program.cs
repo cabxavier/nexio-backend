@@ -1,7 +1,16 @@
 using Domain.Interface.Generics;
+using Domain.Interface.IBairro;
+using Domain.Interface.ICep;
+using Domain.Interface.ICidade;
 using Domain.Interface.IDocumento;
 using Domain.Interface.IEmpresa;
+using Domain.Interface.IEndereco;
+using Domain.Interface.IEstado;
+using Domain.Interface.ILogradouro;
+using Domain.Interface.IPais;
 using Domain.Interface.IPessoa;
+using Domain.Interface.ITipoEndereco;
+using Domain.Interface.ITipoLogradouro;
 using Domain.Interface.IUsuario;
 using Domain.Interface.Service;
 using Domain.Servico;
@@ -74,12 +83,30 @@ builder.Services.AddSingleton<IDocumento, RepositorioDocumento>();
 builder.Services.AddSingleton<IEmpresa, RepositorioEmpresa>();
 builder.Services.AddSingleton<IPessoa, RepositorioPessoa>();
 builder.Services.AddSingleton<IUsuario, RepositorioUsuario>();
+builder.Services.AddSingleton<IPais, RepositorioPais>();
+builder.Services.AddSingleton<IEstado, RepositorioEstado>();
+builder.Services.AddSingleton<ITipoLogradouro, RepositorioTipoLogradouro>();
+builder.Services.AddSingleton<ILogradouro, RepositorioLogradouro>();
+builder.Services.AddSingleton<IBairro, RepositorioBairro>();
+builder.Services.AddSingleton<ICidade, RepositorioCidade>();
+builder.Services.AddSingleton<ICep, RepositorioCep>();
+builder.Services.AddSingleton<ITipoEndereco, RepositorioTipoEndereco>();
+builder.Services.AddSingleton<IEndereco, RepositorioEndereco>();
 
 /***** SERVIÇO E DOMINIO *****/
 builder.Services.AddSingleton<IDocumentoService, DocumentoService>();
 builder.Services.AddSingleton<IEmpresaService, EmpresaService>();
 builder.Services.AddSingleton<IPessoaService, PessoaService>();
 builder.Services.AddSingleton<IUsuarioService, UsuarioService>();
+builder.Services.AddSingleton<IPaisService, PaisService>();
+builder.Services.AddSingleton<IEstadoService, EstadoService>();
+builder.Services.AddSingleton<ITipoLogradouroService, TipoLogradouroService>();
+builder.Services.AddSingleton<ILogradouroService, LogradouroService>();
+builder.Services.AddSingleton<IBairroService, BairroService>();
+builder.Services.AddSingleton<ICidadeService, CidadeService>();
+builder.Services.AddSingleton<ICepService, CepService>();
+builder.Services.AddSingleton<ITipoEnderecoService, TipoEnderecoService>();
+builder.Services.AddSingleton<IEnderecoService, EnderecoService>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
              .AddJwtBearer(option =>

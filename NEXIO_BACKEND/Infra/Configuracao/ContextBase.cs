@@ -7,15 +7,21 @@ namespace Infra.Configuracao
 {
     public class ContextBase : IdentityDbContext<ApplicationUser>
     {
-        public ContextBase(DbContextOptions Options) : base(Options)
-        {
-
-        }
+        public ContextBase(DbContextOptions Options) : base(Options) { }
 
         public DbSet<Documento> Documento { get; set; }
         public DbSet<Empresa> Empresa { get; set; }
         public DbSet<Pessoa> Pessoa { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Pais> Pais { get; set; }
+        public DbSet<Estado> Estado { get; set; }
+        public DbSet<TipoLogradouro> TipoLogradouro { get; set; }
+        public DbSet<Logradouro> Logradouro { get; set; }
+        public DbSet<Bairro> Bairro { get; set; }
+        public DbSet<Cidade> Cidade { get; set; }
+        public DbSet<Cep> Cep { get; set; }
+        public DbSet<TipoEndereco> TipoEndereco { get; set; }
+        public DbSet<Endereco> Endereco { get; set; }
 
         protected override void OnModelCreating(ModelBuilder Builder)
         {
@@ -24,6 +30,15 @@ namespace Infra.Configuracao
             Builder.Entity<Empresa>().ToTable("Empresa").HasKey(i => i.IdEmpresa);
             Builder.Entity<Pessoa>().ToTable("Pessoa").HasKey(i => i.IdPessoa);
             Builder.Entity<Usuario>().ToTable("Usuario").HasKey(i => i.IdUsuario);
+            Builder.Entity<Pais>().ToTable("Pais").HasKey(i => i.IdPais);
+            Builder.Entity<Estado>().ToTable("Estado").HasKey(i => i.IdEstado);
+            Builder.Entity<TipoLogradouro>().ToTable("TipoLogradouro").HasKey(i => i.IdTipoLogradouro);
+            Builder.Entity<Logradouro>().ToTable("Logradouro").HasKey(i => i.IdLogradouro);
+            Builder.Entity<Bairro>().ToTable("Bairro").HasKey(i => i.IdBairro);
+            Builder.Entity<Cidade>().ToTable("Cidade").HasKey(i => i.IdCidade);
+            Builder.Entity<Cep>().ToTable("Cep").HasKey(i => i.IdCep);
+            Builder.Entity<TipoEndereco>().ToTable("TipoEndereco").HasKey(i => i.IdTipoEndereco);
+            Builder.Entity<Endereco>().ToTable("Endereco").HasKey(i => i.IdEndereco);
 
             base.OnModelCreating(Builder);
         }
